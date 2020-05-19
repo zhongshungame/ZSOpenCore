@@ -1,0 +1,6 @@
+framework module ZSOpenCore {
+  umbrella header "ZSOpenCore.h"
+
+  export *
+  module * { export * }
+}
