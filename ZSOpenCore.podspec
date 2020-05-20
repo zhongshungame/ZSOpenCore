@@ -16,7 +16,7 @@ TODO: Add long description of the pod here.
   s.vendored_frameworks = 'Frameworks/ZSOpenCore.framework'
   s.frameworks   = 'UIKit','Foundation'
   
-  s.user_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC -all_load','ENABLE_STRICT_OBJC_MSGSEND'=>'NO' }
+  s.user_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC','ENABLE_STRICT_OBJC_MSGSEND'=>'NO' }
 
   s.dependency 'AFNetworking','3.2.1'
   s.dependency 'MJExtension'
