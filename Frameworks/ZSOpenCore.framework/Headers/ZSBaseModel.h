@@ -20,7 +20,7 @@
 @property(nonatomic,copy)NSString *error_description;
 /// 时间
 @property (nonatomic, copy) NSString *responseTime;
-@property (nonatomic, strong) NSDictionary *data;
+@property (nonatomic, strong)id data;
 /** 请求任务标识 */
 @property(nonatomic,copy)NSString *requestTaskId;
 @end

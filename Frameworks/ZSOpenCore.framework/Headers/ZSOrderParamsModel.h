@@ -53,7 +53,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, copy) NSString *desc;
 
 /// 默认为ios 无需设置
-@property (nonatomic, assign,readonly) ZSOrderDeviceType device;
+@property (nonatomic, assign) ZSOrderDeviceType device;
 @property (nonatomic, copy) NSString *typeCode;
 @property (nonatomic, copy) NSString *extData;
 @property (nonatomic, copy) NSString *extInfo;
@@ -64,7 +64,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, copy) NSString *signType;
 
 /// 分包号 sdk自动设置无需设置
-@property (nonatomic, copy,readonly) NSString *channelSubCode;
+@property (nonatomic, copy) NSString *channelSubCode;
 
 /// app版本号
 @property (nonatomic, copy) NSString *appVersion;

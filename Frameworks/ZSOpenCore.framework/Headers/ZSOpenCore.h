@@ -31,9 +31,10 @@ FOUNDATION_EXPORT const unsigned char ZSOpenCoreVersionString[];
 #import <ZSOpenCore/ZSArchiveTokenModel.h>
 #import <ZSOpenCore/ZSTokenResultModel.h>
 
-#import <ZSOpenCore/ZSPlayerService.h>
-#import <ZSOpenCore/ZSSMSService.h>
+#import <ZSOpenCore/ZSPlayerOpenService.h>
+#import <ZSOpenCore/ZSSMSOpenService.h>
 #import <ZSOpenCore/ZSPayService.h>
 #import <ZSOpenCore/ZSExchangeService.h>
 #import <ZSOpenCore/ZSPUSHService.h>
 #import <ZSOpenCore/ZSAdvertisingManager.h>
+#import <ZSOpenCore/ZSIAPManager.h>

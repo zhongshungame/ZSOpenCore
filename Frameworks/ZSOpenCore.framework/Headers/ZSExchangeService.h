@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ZSGoodsListResultModel.h"
 
 @class ZSBaseModel,ZSGoodsListResultModel;
 
@@ -22,11 +21,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param pageSize 页数量
 /// @param pageIndex 页面（从1开始）
 /// @param currencyId 兑换货币Id(int可选参数,示例参数：@1或nil)
-/// @param completeBlock 完成回调（list即商品列表）
--(void)GetGoodsListWithPageSize:(int)pageSize
-                      pageIndex:(int)pageIndex
-                     currencyId:(nullable id)currencyId
-                  completeBlock:(void (^)(ZSBaseModel *model,NSMutableArray<ZSGoodsListResultModel *> *_Nullable list))completeBlock;
+/// @param onSuccess 成功回调函数
+/// @param onFailure 失败回调函数
+-(void)getGoodsList:(int)pageSize
+          pageIndex:(int)pageIndex
+         currencyId:(NSString *_Nullable)currencyId
+          onSuccess:(void (^)(long code,NSString *_Nullable result))onSuccess
+          onFailure:(void (^)(long code,NSString *errMessage))onFailure;
 @end
 
 NS_ASSUME_NONNULL_END
