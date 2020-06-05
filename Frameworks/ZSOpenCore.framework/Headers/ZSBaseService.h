@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "ZSBaseModel.h"
-#import <MJExtension/MJExtension.h>
 #import "ZSTokenResultModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
