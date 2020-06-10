@@ -75,6 +75,17 @@ NS_ASSUME_NONNULL_BEGIN
        onSuccess:(void (^)(long code,NSString *_Nullable result))onSuccess
        onFailure:(void (^)(long code,NSString *errMessage))onFailure;
 
+
+/// 苹果登录
+/// @param onSuccess 成功回调
+/// @param onFailure 失败回调
+-(void)sigInWithApple:(void (^)(long code,NSString *_Nullable result))onSuccess
+            onFailure:(void (^)(long code,NSString *errMessage))onFailure;
+
+/// 启动时监听苹果登录的状态
+/// @param complete 完成回调(若当前用户是苹果登录，并且用户在设置注销了AppleID，则APP启动时needLogin为YES)
+-(void)checkSignInAppleStateWhenLaunchWithComplete:(void (^)(BOOL needLogin))complete;
+
 /// 刷新当前登录账号的token
 /// @param onSuccess 成功回调
 /// @param onFailure 失败回调

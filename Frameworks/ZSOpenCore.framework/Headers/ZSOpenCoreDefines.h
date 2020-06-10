@@ -33,7 +33,8 @@ typedef enum : NSUInteger {
     ZSTokenTypeAccount,//账号
     ZSTokenTypeWechat,//微信
     ZSTokenTypeClient,//官方应用
-    ZSTokenTypeTourist //游客
+    ZSTokenTypeTourist, //游客
+    ZSTokenTypeApple
 } ZSTokenType;
 
 typedef enum : NSUInteger {
