@@ -166,6 +166,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param onSuccess 成功回调
 /// @param onFailure 失败回调
 -(void)getAccessToken:(void (^)(long code,NSString *_Nullable result))onSuccess onFailure:(void (^)(long code,NSString *errMessage))onFailure;
+
+/// 注销平台账号
+/// @param onSuccess 成功回调
+/// @param onFailure 失败回调
+-(void)Cancellation:(void (^)(long code,NSString *_Nullable result))onSuccess onFailure:(void (^)(long code,NSString *errMessage))onFailure;
 @end
 
 NS_ASSUME_NONNULL_END

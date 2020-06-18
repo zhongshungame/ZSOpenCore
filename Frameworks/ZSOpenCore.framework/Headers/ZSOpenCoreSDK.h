@@ -9,28 +9,21 @@
 #import <Foundation/Foundation.h>
 #import "ZSOpenCoreDefines.h"
 
-@class ZSBaseModel, ZSRegistResultModel, ZSLoginResultModel, ZSPromoteResultModel, ZSUserInfoResultModel, ZSResetPasswordResultModel, ZSOrderParamsModel, ZSQuestionListResultModel;
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZSOpenCoreSDK: NSObject
 
-/**
- 初始化SDK，调用其他接口前必须先初始化
- 
- @param environmentType 环境
- @param channelNo 渠道id
- @param packageNo 分包id
- @param scope scope
- @param appId appId
- @param appSecret appSecret
- */
-+ (void)initializeSDKWithEnvironment:(ZSEnvironmentType)environmentType
-                               appId:(NSString *)appId
-                           appSecret:(NSString *)appSecret
-                               scope:(NSString *)scope
-                           channelNo:(NSString *)channelNo
-                           packageNo:(NSString *)packageNo;
+/// 初始化SDK，调用其他接口前必须先初始化
+/// @param appId appId
+/// @param appSecret appSecret
+/// @param scope api scope
+/// @param channelNo 渠道号
+/// @param packageNo 分包号
++ (void)initializeSDKWithAppId:(NSString *)appId
+                     appSecret:(NSString *)appSecret
+                         scope:(NSString *)scope
+                     channelNo:(NSString *)channelNo
+                     packageNo:(NSString *)packageNo,...NS_REQUIRES_NIL_TERMINATION;
 
 /// 关闭日志打印
 +(void)setLogOFF;

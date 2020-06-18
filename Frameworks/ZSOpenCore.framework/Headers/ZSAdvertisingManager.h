@@ -31,7 +31,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 加载激励视频广告
 /// @rewardName 奖励名称（道具ID），此参数将会透传给后端的回调接口
 /// @rewardAmount 奖励的数量，此参数将会透传给后端的回调接口
-/// @needServerValidate 是否需要回调服务器验证
 /// @viewController 广告展示所在的控制器，传入nil(空)值则默认是application.keyWindow.rootViewController
 /// @param successLoadAdHandler 广告加载成功回调 回调参数为广告的key标识，请保存好此key，用于页面即将消失（viewWillDisappear）并且用户没有关闭广告时删除广告使用，
 /// 注意：广告即将展示时系统会回调viewWillDisappear（App应用），请控制好删除广告逻辑
@@ -41,7 +40,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param serverRewardedHandler 调用服务器接口回调
 - (void)loadRewardedVideoAdWithRewardName:(NSString *)rewardName
                              rewardAmount:(NSUInteger)rewardAmount
-                       needServerValidate:(BOOL)needServerValidate
                            viewController:(UIViewController *_Nullable)viewController
                      successLoadAdHandler:(void (^)(NSString *key))successLoadAdHandler
                         failLoadAdHandler:(void (^_Nullable)(NSError *error))failLoadAdHandler

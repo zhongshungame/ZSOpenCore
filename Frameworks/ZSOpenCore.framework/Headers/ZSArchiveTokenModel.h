@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign)long loginTime;
 /** 解密token的sub:获取 */
 @property(nonatomic,copy)NSString *openId;
-/** 用户账号 tokenType=游客时不为空*/
+/** 用户账号 tokenType=游客或账号登录时不为空*/
 @property(nonatomic,copy,nullable)NSString *account;
 /** 用户密码 tokenType=游客时不为空*/
 @property(nonatomic,copy,nullable)NSString *password;
