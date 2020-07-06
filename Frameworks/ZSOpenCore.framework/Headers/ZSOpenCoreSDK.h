@@ -17,11 +17,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param appId appId
 /// @param appSecret appSecret
 /// @param scope api scope
+/// @param publicKey 公钥(下单签名使用)
 /// @param channelNo 渠道号
 /// @param packageNo 分包号
 + (void)initializeSDKWithAppId:(NSString *)appId
                      appSecret:(NSString *)appSecret
                          scope:(NSString *)scope
+                     publicKey:(NSString *)publicKey
                      channelNo:(NSString *)channelNo
                      packageNo:(NSString *)packageNo,...NS_REQUIRES_NIL_TERMINATION;
 

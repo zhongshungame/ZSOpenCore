@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ZSOpenCore'
-  s.version          = '1.0.5'
+  s.version          = '1.1.0'
   s.summary          = 'Open SDK for qkagame'
   s.description      = <<-DESC
 TODO: Add long description of the pod here.

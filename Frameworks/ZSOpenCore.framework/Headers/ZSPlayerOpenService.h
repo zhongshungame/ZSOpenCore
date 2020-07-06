@@ -158,6 +158,19 @@ NS_ASSUME_NONNULL_BEGIN
              onSuccess:(void (^)(long code,NSString *_Nullable result))onSuccess
              onFailure:(void (^)(long code,NSString *errMessage))onFailure;
 
+/// 修改密码
+/// @param mobile 手机
+/// @param smsCode 短信验证码
+/// @param smsKey smsKey(调用发送短信验证码接口时的sesskey)
+/// @param password 新密码
+/// @param onSuccess 成功回调
+/// @param onFailure 失败回调
+-(void)doUpdatePassword:(NSString *)mobile
+                smsCode:(NSString *)smsCode
+                 smsKey:(NSString *)smsKey
+               password:(NSString *)password
+              onSuccess:(void (^)(long code,NSString *_Nullable result))onSuccess
+              onFailure:(void (^)(long code,NSString *errMessage))onFailure;
 
 /// 获取分包号
 -(NSString *)getPackageCode;
