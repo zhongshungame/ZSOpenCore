@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
                              rewardAmount:(NSUInteger)rewardAmount
                            viewController:(UIViewController *_Nullable)viewController
                      successLoadAdHandler:(void (^)(NSString *key))successLoadAdHandler
-                        failLoadAdHandler:(void (^_Nullable)(NSError *error))failLoadAdHandler
+                        failLoadAdHandler:(void (^_Nullable)(long code,NSString *errMessage))failLoadAdHandler
                         adWillShowHandler:(void(^_Nullable)(void))adWillShowHandler
                         adDidCloseHandler:(void (^_Nullable)(void))adDidCloseHandler
                     serverRewardedHandler:(void (^)(ZSBaseModel *model))serverRewardedHandler;
@@ -57,7 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param viewController 广告展示所在的控制器，传入nil(空)值则默认是application.keyWindow.rootViewController
 - (void)loadBannerWithLocationType:(ZSBannerLocationType)locationType
                       successLoadAdHandler:(void (^)(NSString *key))successLoadAdHandler
-                         failLoadAdHandler:(void (^_Nullable)(NSError *error))failLoadAdHandler
+                         failLoadAdHandler:(void (^_Nullable)(long code,NSString *errMessage))failLoadAdHandler
                          adDidCloseHandler:(void (^_Nullable)(void))adDidCloseHandler
                              isAnimationOn:(id _Nullable)isAnimationOn
                                   interval:(NSNumber *_Nullable)interval
@@ -72,7 +72,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param adDidCloseHandler 用户手动关闭广告回调
 - (void)loadInterstitialAdWithViewController:(UIViewController *)viewController
                         successLoadAdHandler:(void (^)(NSString *key))successLoadAdHandler
-                           FailLoadAdHandler:(void(^_Nullable)(NSError *error))failLoadAdHandler
+                           FailLoadAdHandler:(void(^_Nullable)(long code,NSString *errMessage))failLoadAdHandler
                            adWillShowHandler:(void(^_Nullable)(void))adWillShowHandler
                            adDidCloseHandler:(void (^_Nullable)(void))adDidCloseHandler;
 

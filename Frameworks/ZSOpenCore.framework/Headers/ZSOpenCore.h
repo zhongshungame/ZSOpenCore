@@ -1,4 +1,4 @@
-//  V1.1.0
+//  V1.0.0
 //  ZSOpenCore.h
 //  ZSOpenCore
 //
@@ -38,3 +38,5 @@ FOUNDATION_EXPORT const unsigned char ZSOpenCoreVersionString[];
 #import <ZSOpenCore/ZSPUSHService.h>
 #import <ZSOpenCore/ZSAdvertisingManager.h>
 #import <ZSOpenCore/ZSIAPManager.h>
+#import <ZSOpenCore/ZSQuickLoginManager.h>
+#import <ZSOpenCore/ZSProductDataReportService.h>

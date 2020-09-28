@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param currencyId 兑换货币Id(int可选参数,示例参数：@1或nil)
 /// @param onSuccess 成功回调函数
 /// @param onFailure 失败回调函数
--(void)getGoodsList:(int)pageSize
++(void)getGoodsList:(int)pageSize
           pageIndex:(int)pageIndex
          currencyId:(NSString *_Nullable)currencyId
           onSuccess:(void (^)(long code,NSString *_Nullable result))onSuccess

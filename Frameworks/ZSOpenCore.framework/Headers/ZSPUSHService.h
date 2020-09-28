@@ -88,6 +88,10 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)registerDeviceToken:(NSData *)deviceToken;
 
 #pragma mark -API 部分
+
+/// 添加渠道号和分标号tag
+/// @param completion 完成回调：iResCode==0为添加成功
++(void)addChannelNoAndPackageNoTagCompletion:(void (^)(NSInteger iResCode, NSSet *iTags, NSInteger seq))completion seq:(NSInteger)seq;
 /*!
  * @abstract 处理收到的 APNs 消息
  */

@@ -14,11 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZSBaseService : NSObject
 
--(void)handleApiWithBaseModel:(ZSBaseModel *)model
++(void)handleApiWithBaseModel:(ZSBaseModel *)model
                     onSuccess:(void (^)(long code,NSString *_Nullable result))onSuccess
                     onFailure:(void (^)(long code,NSString *errMessage))onFailure;
 
--(void)handleApiWithTokenModel:(ZSTokenResultModel *)model onSuccess:(void (^)(long code,NSString *_Nullable result))onSuccess onFailure:(void (^)(long code,NSString *errMessage))onFailure;
++(void)handleApiWithTokenModel:(ZSTokenResultModel *)model onSuccess:(void (^)(long code,NSString *_Nullable result))onSuccess onFailure:(void (^)(long code,NSString *errMessage))onFailure;
 
 @end
 

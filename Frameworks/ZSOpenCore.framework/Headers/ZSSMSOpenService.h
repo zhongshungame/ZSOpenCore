@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param smsKey 相当于cookie用于做区分
 /// @param onSuccess 成功回调
 /// @param onFailure 失败回调
--(void)sendSMS:(NSString *)mobile
++(void)sendSMS:(NSString *)mobile
           type:(int)type
    smsProvider:(int)smsProvider
        smsKey:(NSString *)smsKey

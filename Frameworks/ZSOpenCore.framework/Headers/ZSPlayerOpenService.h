@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 游客注册
 /// @param onSuccess 成功回调
 /// @param onFailure 失败回调
--(void)doRegistVisitor:(void (^)(long code,NSString *_Nullable result))onSuccess
++(void)doRegistVisitor:(void (^)(long code,NSString *_Nullable result))onSuccess
              onFailure:(void (^)(long code,NSString *errMessage))onFailure;
 
 
@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param password 密码(可空)
 /// @param onSuccess 成功回调
 /// @param onFailure 失败回调
--(void)doRegistMobile:(NSString *)mobile
++(void)doRegistMobile:(NSString *)mobile
               smsCode:(NSString *)smsCode
               smsKey:(NSString *)smsKey
              password:(NSString *_Nullable)password
@@ -40,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param password 密码
 /// @param onSuccess 成功回调
 /// @param onFailure 失败回调
--(void)doRegistAccount:(NSString *)account
++(void)doRegistAccount:(NSString *)account
               password:(NSString *)password
              onSuccess:(void (^)(long code,NSString *_Nullable result))onSuccess
              onFailure:(void (^)(long code,NSString *errMessage))onFailure;
@@ -51,7 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param smsKey smsKey(调用发送短信验证码接口时的sesskey)
 /// @param onSuccess 成功回调
 /// @param onFailure 失败回调
--(void)doLoginMobile:(NSString *)mobile
++(void)doLoginMobile:(NSString *)mobile
              smsCode:(NSString *)smsCode
               smsKey:(NSString *)smsKey
            onSuccess:(void (^)(long code,NSString *_Nullable result))onSuccess
@@ -62,7 +62,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param password 密码
 /// @param onSuccess 成功回调
 /// @param onFailure 失败回调
--(void)doLoginUsername:(NSString *)username
++(void)doLoginUsername:(NSString *)username
               password:(NSString *)password
              onSuccess:(void (^)(long code,NSString *_Nullable result))onSuccess
              onFailure:(void (^)(long code,NSString *errMessage))onFailure;
@@ -71,7 +71,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param code 微信授权码
 /// @param onSuccess 成功回调
 /// @param onFailure 失败回调
--(void)doWXLogin:(NSString *)code
++(void)doWXLogin:(NSString *)code
        onSuccess:(void (^)(long code,NSString *_Nullable result))onSuccess
        onFailure:(void (^)(long code,NSString *errMessage))onFailure;
 
@@ -79,29 +79,42 @@ NS_ASSUME_NONNULL_BEGIN
 /// 苹果登录
 /// @param onSuccess 成功回调
 /// @param onFailure 失败回调
--(void)sigInWithApple:(void (^)(long code,NSString *_Nullable result))onSuccess
++(void)sigInWithApple:(void (^)(long code,NSString *_Nullable result))onSuccess
             onFailure:(void (^)(long code,NSString *errMessage))onFailure;
 
 /// 启动时监听苹果登录的状态
 /// @param complete 完成回调(若当前用户是苹果登录，并且用户在设置注销了AppleID，则APP启动时needLogin为YES)
--(void)checkSignInAppleStateWhenLaunchWithComplete:(void (^)(BOOL needLogin))complete;
++(void)checkSignInAppleStateWhenLaunchWithComplete:(void (^)(BOOL needLogin))complete;
+
+
+/// 一键登录
+/// @param ydToken 易盾token
+/// @param yysAccessToken 运营商token
+/// @param securityPhone 脱敏手机号
+/// @param onSuccess 成功回调
+/// @param onFailure 失败回调
++(void)quickLoginWithYdToken:(NSString *)ydToken
+              yysAccessToken:(NSString *)yysAccessToken
+               securityPhone:(NSString *_Nullable)securityPhone
+                   onSuccess:(void (^)(long code,NSString *_Nullable result))onSuccess
+                   onFailure:(void (^)(long code,NSString *errMessage))onFailure;
 
 /// 刷新当前登录账号的token
 /// @param onSuccess 成功回调
 /// @param onFailure 失败回调
--(void)refreshToken:(void (^)(long code,NSString *_Nullable result))onSuccess
++(void)refreshToken:(void (^)(long code,NSString *_Nullable result))onSuccess
           onFailure:(void (^)(long code,NSString *errMessage))onFailure;
 
 /// 退出登录
 /// @param onSuccess 成功回调
 /// @param onFailure 失败回调
--(void)doExit:(void (^)(long code,NSString *_Nullable result))onSuccess
++(void)doExit:(void (^)(long code,NSString *_Nullable result))onSuccess
     onFailure:(void (^)(long code,NSString *errMessage))onFailure;
 
 /// 获取当前登录账号的信息
 /// @param onSuccess 成功回调
 /// @param onFailure 失败回调
--(void)getAccountInfo:(void (^)(long code,NSString *_Nullable result))onSuccess
++(void)getAccountInfo:(void (^)(long code,NSString *_Nullable result))onSuccess
             onFailure:(void (^)(long code,NSString *errMessage))onFailure;
 
 /// 手机转正（绑定）
@@ -111,7 +124,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param password 密码
 /// @param onSuccess 成功回调
 /// @param onFailure 失败回调
--(void)doPromoteByMobile:(NSString *)mobile
++(void)doPromoteByMobile:(NSString *)mobile
                  smsCode:(NSString *)smsCode
                   smsKey:(NSString *)smsKey
                 password:(NSString *)password
@@ -122,7 +135,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param code 微信授权码
 /// @param onSuccess 成功回调
 /// @param onFailure 失败回调
--(void)doPromoteByWX:(NSString *)code
++(void)doPromoteByWX:(NSString *)code
            onSuccess:(void (^)(long code,NSString *_Nullable result))onSuccess
            onFailure:(void (^)(long code,NSString *errMessage))onFailure;
 
@@ -130,7 +143,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param mobile 手机号
 /// @param onSuccess 成功回调
 /// @param onFailure 失败回调
--(void)queryMobile:(NSString *)mobile
++(void)queryMobile:(NSString *)mobile
          onSuccess:(void (^)(long code,NSString *_Nullable result))onSuccess
          onFailure:(void (^)(long code,NSString *errMessage))onFailure;
 
@@ -139,7 +152,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param ID 身份证号码
 /// @param onSuccess 成功回调
 /// @param onFailure 失败回调
--(void)bindIDCard:(NSString *)realName
++(void)bindIDCard:(NSString *)realName
                ID:(NSString *)ID
         onSuccess:(void (^)(long code,NSString *_Nullable result))onSuccess
         onFailure:(void (^)(long code,NSString *errMessage))onFailure;
@@ -151,7 +164,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param password 新密码
 /// @param onSuccess 成功回调
 /// @param onFailure 失败回调
--(void)doResetPassword:(NSString *)mobile
++(void)doResetPassword:(NSString *)mobile
                smsCode:(NSString *)smsCode
                 smsKey:(NSString *)smsKey
               password:(NSString *)password
@@ -165,7 +178,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param password 新密码
 /// @param onSuccess 成功回调
 /// @param onFailure 失败回调
--(void)doUpdatePassword:(NSString *)mobile
++(void)doUpdatePassword:(NSString *)mobile
                 smsCode:(NSString *)smsCode
                  smsKey:(NSString *)smsKey
                password:(NSString *)password
@@ -173,17 +186,40 @@ NS_ASSUME_NONNULL_BEGIN
               onFailure:(void (^)(long code,NSString *errMessage))onFailure;
 
 /// 获取分包号
--(NSString *)getPackageCode;
++(NSString *)getPackageCode;
 
 /// 获取当前token
 /// @param onSuccess 成功回调
 /// @param onFailure 失败回调
--(void)getAccessToken:(void (^)(long code,NSString *_Nullable result))onSuccess onFailure:(void (^)(long code,NSString *errMessage))onFailure;
++(void)getAccessToken:(void (^)(long code,NSString *_Nullable result))onSuccess onFailure:(void (^)(long code,NSString *errMessage))onFailure;
 
 /// 注销平台账号
 /// @param onSuccess 成功回调
 /// @param onFailure 失败回调
--(void)Cancellation:(void (^)(long code,NSString *_Nullable result))onSuccess onFailure:(void (^)(long code,NSString *errMessage))onFailure;
++(void)Cancellation:(void (^)(long code,NSString *_Nullable result))onSuccess onFailure:(void (^)(long code,NSString *errMessage))onFailure;
+
+/// 获取缓存账号列表（返回json字符串)
++(NSString *)getAccountInfos;
+
+/// 切换一个缓存账号
+/// @param openId openId
+/// @param onSuccess 成功回调
+/// @param onFailure 失败回调
++(void)changeAccount:(NSString *)openId
+           onSuccess:(void (^)(long code,NSString *_Nullable result))onSuccess
+           onFailure:(void (^)(long code,NSString *errMessage))onFailure;
+
+/// 获取票据接口
+/// @param mobile 手机号
+/// @param smsCode 短信验证码
+/// @param smsKey smsKey
+/// @param onSuccess 成功回调
+/// @param onFailure 失败回调
++(void)getTicket:(NSString *)mobile
+         smsCode:(NSString *)smsCode
+          smsKey:(NSString *)smsKey
+       onSuccess:(void (^)(long code,NSString *_Nullable result))onSuccess
+       onFailure:(void (^)(long code,NSString *errMessage))onFailure;
 @end
 
 NS_ASSUME_NONNULL_END
